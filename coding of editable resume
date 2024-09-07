@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .editable {
+            cursor: pointer;
+        }
+        .editable:focus {
+            outline: none;
+            border-bottom: 2px solid #4A90E2;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl font-semibold mb-4">Milestone 4: Editable Resume</h1>
+
+    <div class="max-w-2xl mx-auto mt-8">
+        <h2 class="text-xl font-semibold mb-4">Editable Resume</h2>
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold">Education</h3>
+            <p class="editable" contenteditable="true">Bachelor of Science in Computer Science, XYZ University</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold">Work Experience</h3>
+            <p class="editable" contenteditable="true">Software Engineer at ABC Company</p>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold">Skills</h3>
+            <p class="editable" contenteditable="true">JavaScript, TypeScript, React, Node.js</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.editable').forEach(element => {
+            element.addEventListener('blur', (event) => {
+                // Save the edited content to local storage or send it to the server
+                console.log('Content saved:', event.target.innerText);
+            });
+        });
+    </script>
+</body>
+</html>
